@@ -45,7 +45,7 @@ if ingredients_list:
         search_on=pd_df.loc[pd_df['FRUIT_NAME'] == fruit_chosen, 'SEARCH_ON'].iloc[0]
         st.write('The search value for ', fruit_chosen,' is ', search_on, '.')
 
-        st.subheader(x + " Nutritional Information")
+        st.subheader(fruit_chosen + " Nutritional Information")
         fruityvice_response = requests.get("https://fruityvice.com/api/fruit/"+fruit_chosen)
         #st.text(fruityvice_response.json())
         fv_df = st.dataframe(data = fruityvice_response.json(), use_container_width=True)
